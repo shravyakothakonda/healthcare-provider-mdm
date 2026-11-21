@@ -76,10 +76,17 @@ These percentages are rule pass rates, not overall data accuracy scores.
 ## Repository Contents
 
 - `README.md`: project overview, methods, results, and limitations
+- `governance.md`: implemented controls and proposed stewardship process
 - `provider_data_quality_dashboard.png`: Power BI dashboard screenshot
+- `sql/validation_checks.sql`: read-only checks for the completed SQLite database
 
-## Data Source and Privacy
+## Running the Validation SQL
 
-Source data was retrieved from the public CMS NPPES API.
+The validation script requires the existing project database,
+`healthcare_provider_mdm.db`, with the completed project tables.
 
-No patient records or clinical workbooks are included in this repository.
+Open the database in DB Browser for SQLite, select Execute SQL,
+and run each query in `sql/validation_checks.sql` separately.
+
+The database is not currently included in this repository.
+The validation script does not recreate the ingestion or cleaning workflow.
